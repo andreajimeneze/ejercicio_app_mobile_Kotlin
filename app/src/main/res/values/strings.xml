@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">DAMComisionE</string>
+    <string name="iniciar_sesi_n">Iniciar sesión</string>
+    <string name="login_title">Inicio de sesión</string>
+    <string name="email_hint">Ingrese su email</string>
+    <string name="password_hint">Ingrese su contraseña</string>
+    <string name="login_button">Ingresar</string>
+    <string name="welcome_message">¡Bienvenido!</string>
+    <string name="home_welcome">Bienvenido al home</string>
+</resources>
