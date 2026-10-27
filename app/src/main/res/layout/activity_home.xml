@@ -39,4 +39,49 @@
         />
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/cardInscribirSocio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_menu_myplaces"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Eliminar socio"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Socios Registrados"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/txtSinSocios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Todavía no hay socios"
+        android:textSize="12sp"
+        android:visibility="gone"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSocios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:visibility="visible"/>
+
+
 </LinearLayout>
