@@ -39,10 +39,20 @@ class AltaSocioActivity : AppCompatActivity() {
             } else if(!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                 Toast.makeText(this, "Ingrese un email válido", Toast.LENGTH_SHORT).show()
             } else {
+
                 val socio = Socio(nombre = nombre, dni = dni, email = email)
-                Datos.socios.add(socio)
-                Log.d("SOCIO", socio.toString())
-                finish()
+                val dbHelper = SocioDBHelper(this)
+                val resultado = dbHelper.agregarSocio(socio)
+
+                if(resultado != -1L) {
+                    Toast.makeText(this, "Socio creado", Toast.LENGTH_SHORT).show()
+                    finish()
+                } else {
+                    Toast.makeText(this, "Error al crear usuario", Toast.LENGTH_SHORT).show()
+                }
+                //Datos.socios.add(socio)
+                //Log.d("SOCIO", socio.toString())
+                //finish()
             }
 
         }

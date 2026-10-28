@@ -16,10 +16,13 @@ import androidx.recyclerview.widget.RecyclerView
 class HomeActivity : AppCompatActivity() {
     private lateinit var rvSocios: RecyclerView
     private lateinit var txtSinSocios: TextView
+    private lateinit var dbHelper: SocioDBHelper
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_home)
+        dbHelper = SocioDBHelper(this)
 
         val cardInscribirSocio = findViewById<LinearLayout>(R.id.cardInscribirSocio)
 
@@ -49,7 +52,8 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun cargarSocios() {
-        val socios = Datos.socios.toList()
+        val socios = dbHelper.obtenerSocios()
+        //val socios = Datos.socios.toList()
         rvSocios.adapter = SocioAdapter(socios)
 
         if(socios.isEmpty()) {
